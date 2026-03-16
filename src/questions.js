@@ -9,18 +9,11 @@ export const questions = [
     ],
     answer: 1
   },
-
   {
     question: "Qual linguagem roda no navegador?",
-    options: [
-      "Python",
-      "Java",
-      "JavaScript",
-      "C++"
-    ],
+    options: ["Python", "Java", "JavaScript", "C++"],
     answer: 2
   },
-
   {
     question: "O que é Git?",
     options: [
@@ -31,18 +24,11 @@ export const questions = [
     ],
     answer: 1
   },
-
   {
     question: "Qual tecnologia estiliza páginas web?",
-    options: [
-      "CSS",
-      "Node.js",
-      "Docker",
-      "SQL"
-    ],
+    options: ["CSS", "Node.js", "Docker", "SQL"],
     answer: 0
   },
-
   {
     question: "O que significa API?",
     options: [
@@ -53,4 +39,4 @@ export const questions = [
     ],
     answer: 0
   }
-]
+];

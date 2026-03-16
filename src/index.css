@@ -19,18 +19,10 @@
   --option-selected: linear-gradient(135deg, #0ea5c6, #39d5ff);
 }
 
-html {
-  font-size: 16px;
-}
-
 body {
   font-family: Arial, sans-serif;
   background: var(--bg-dark);
   overflow-x: hidden;
-}
-
-#root {
-  min-height: 100vh;
 }
 
 .app {
@@ -66,22 +58,8 @@ body {
   animation: floatGlow 8s ease-in-out infinite;
 }
 
-.glow-1 {
-  width: 320px;
-  height: 320px;
-  background: #19c6ff;
-  top: 8%;
-  left: 8%;
-}
-
-.glow-2 {
-  width: 260px;
-  height: 260px;
-  background: #0ea5c6;
-  right: 10%;
-  bottom: 10%;
-  animation-delay: 2s;
-}
+.glow-1 { width: 320px; height: 320px; background: #19c6ff; top: 8%; left: 8%; }
+.glow-2 { width: 260px; height: 260px; background: #0ea5c6; right: 10%; bottom: 10%; animation-delay: 2s; }
 
 .quiz-panel {
   position: relative;
@@ -90,60 +68,17 @@ body {
   max-width: 760px;
   padding: 36px;
   border-radius: 24px;
-  background:
-    linear-gradient(180deg, rgba(12, 43, 61, 0.92), rgba(5, 24, 37, 0.92));
+  background: linear-gradient(180deg, rgba(12, 43, 61, 0.92), rgba(5, 24, 37, 0.92));
   border: 1px solid rgba(139, 233, 255, 0.18);
-  box-shadow:
-    0 0 0 1px rgba(57, 213, 255, 0.04),
-    0 20px 60px rgba(0, 0, 0, 0.45),
-    0 0 40px rgba(57, 213, 255, 0.08);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(10px);
-  overflow: hidden;
 }
 
-.quiz-panel::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(90deg, transparent, rgba(139, 233, 255, 0.06), transparent);
-  pointer-events: none;
-}
+.quiz-panel h1 { color: var(--text-main); font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 10px; }
+.question-count { color: var(--text-soft); margin-bottom: 18px; }
+.quiz-panel h2 { color: var(--text-main); margin-bottom: 24px; line-height: 1.35; }
 
-.quiz-panel h1 {
-  color: var(--text-main);
-  font-size: clamp(2rem, 5vw, 3rem);
-  line-height: 1.1;
-  margin-bottom: 10px;
-  text-shadow: 0 0 18px rgba(57, 213, 255, 0.14);
-}
-
-.question-count {
-  color: var(--text-soft);
-  margin-bottom: 18px;
-  font-size: 0.98rem;
-}
-
-.quiz-panel h2 {
-  color: var(--text-main);
-  font-size: clamp(1.2rem, 3.5vw, 1.75rem);
-  line-height: 1.35;
-  margin-bottom: 24px;
-  word-break: break-word;
-}
-
-.quiz-panel h3 {
-  margin-top: 18px;
-  color: var(--cyan);
-  font-size: clamp(1.1rem, 3vw, 1.5rem);
-  text-shadow: 0 0 14px rgba(57, 213, 255, 0.2);
-}
-
-.options {
-  display: grid;
-  gap: 14px;
-  margin-bottom: 24px;
-}
+.options { display: grid; gap: 14px; margin-bottom: 24px; }
 
 .option {
   width: 100%;
@@ -152,19 +87,12 @@ body {
   border: 1px solid rgba(139, 233, 255, 0.12);
   background: var(--option-bg);
   color: var(--text-main);
-  font-size: 1rem;
-  line-height: 1.4;
-  text-align: left;
   cursor: pointer;
   transition: all 0.25s ease;
-  word-break: break-word;
+  text-align: left;
 }
 
-.option:hover {
-  transform: translateY(-2px);
-  border-color: rgba(57, 213, 255, 0.36);
-  background: var(--option-hover);
-}
+.option:hover { transform: translateY(-2px); background: var(--option-hover); }
 
 .option.selected {
   background: var(--option-selected);
@@ -175,91 +103,23 @@ body {
 .next-button {
   width: 100%;
   padding: 16px;
-  border: 1px solid rgba(139, 233, 255, 0.28);
   border-radius: 16px;
   background: linear-gradient(90deg, #0f6d8c, #19c6ff);
   color: #031926;
-  font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
+  border: none;
 }
 
-.next-button:disabled {
-  opacity: 0.45;
-  cursor: not-allowed;
-}
+.next-button:disabled { opacity: 0.45; cursor: not-allowed; }
 
-.result-panel {
-  text-align: center;
-}
+.result-panel { text-align: center; }
 
 @keyframes floatGlow {
-  0% {
-    transform: translateY(0) translateX(0);
-  }
-
-  50% {
-    transform: translateY(-18px) translateX(10px);
-  }
-
-  100% {
-    transform: translateY(0) translateX(0);
-  }
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-18px) translateX(10px); }
 }
-
-/* tablet */
 
 @media (max-width: 768px) {
-
-  .app {
-    padding: 20px;
-  }
-
-  .quiz-panel {
-    padding: 24px;
-  }
-
-  .option,
-  .next-button {
-    padding: 14px;
-  }
-
-}
-
-/* celular */
-
-@media (max-width: 480px) {
-
-  .app {
-    padding: 14px;
-  }
-
-  .quiz-panel {
-    padding: 18px;
-  }
-
-  .options {
-    gap: 10px;
-  }
-
-  .option {
-    padding: 12px;
-    font-size: 0.95rem;
-  }
-
-  .next-button {
-    padding: 12px;
-    font-size: 0.95rem;
-  }
-
-  .glow-1 {
-    width: 160px;
-    height: 160px;
-  }
-
-  .glow-2 {
-    width: 140px;
-    height: 140px;
-  }
-
+  .quiz-panel { padding: 24px; }
 }
